@@ -6,13 +6,13 @@ public abstract class Usuario {
     private String nome;
     private String email;
     private Endereco endereco;
-    private Date dataNasciemento;
+    private Date dataNascimento;
 
-    public Usuario(String nome, String email, Endereco endereco, Date dataNasciemento) {
+    public Usuario(String nome, String email, Endereco endereco, Date dataNascimento) {
         this.nome = nome;
         this.email = email;
         this.endereco = endereco;
-        this.dataNasciemento = dataNasciemento;
+        this.dataNascimento = dataNascimento;
     }
 
     public String getNome() {
@@ -40,10 +40,10 @@ public abstract class Usuario {
     }
 
     public Date getDataNasciemento() {
-        return dataNasciemento;
+        return dataNascimento;
     }
 
-    public void setDataNasciemento(Date dataNasciemento) {
-        this.dataNasciemento = dataNasciemento;
+    public void setDataNasciemento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 }
