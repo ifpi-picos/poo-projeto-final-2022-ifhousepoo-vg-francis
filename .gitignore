@@ -3,3 +3,4 @@ bin/
 # Pasta gerada automaticamente pelo maven
 target/
 .vscode/
+.env

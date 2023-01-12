@@ -1,7 +1,17 @@
 package com.example;
 
+import java.sql.Connection;
+import com.example.Conexao.ConexaoDAO;
+
 public class App {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+        Connection conexao = ConexaoDAO.getConexcao();
 }
+}
+            
+        
+
+    
