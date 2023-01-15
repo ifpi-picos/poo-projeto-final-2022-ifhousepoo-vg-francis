@@ -29,6 +29,8 @@ public class App extends Application {
 
         Scene scene = new Scene(root);
 
+        Image icon = new Image("/icon.png");
+        stage.getIcons().add(icon);
         stage.setTitle("IFHouse");
         stage.setScene(scene);
         stage.setResizable(false);
