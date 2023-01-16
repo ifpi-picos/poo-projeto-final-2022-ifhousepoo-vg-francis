@@ -29,16 +29,19 @@ public class ImovelDAO {
 
     }
 
+    /**
+     * @return
+     */
     public List<Imovel> consultarTodos(){
         String sql = "select * from imovel";
-        List<Imovel> usuarios = new ArrayList<>();
+        List<Imovel> imovel = new ArrayList<>();
         try {
             Statement stm = conexao.createStatement();
             ResultSet result = stm.executeQuery(sql);
             while (result.next()) {
                 Imovel.add(new Imovel(result.getString("descricao"), result.getDouble("valorAluguel"),result.getString("endereco"),result.getDate("dataCadastro")));
             }
-            return usuarios;
+            return imovel;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
