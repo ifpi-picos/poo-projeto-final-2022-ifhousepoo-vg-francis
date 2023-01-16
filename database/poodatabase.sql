@@ -2,8 +2,8 @@ CREATE TABLE usuario(
  id_usuario INT PRIMARY KEY,
  nome VARCHAR(40) NOT NULL,
  email VARCHAR(60) NOT NULL,
- data_nascimento DATE NOT NULL
- id_endereco INT foreign key;
+ data_nascimento DATE NOT NULL,
+ endereco VARCHAR(150) not null
 );
 CREATE TABLE Imovel (
  valorAluguel FLOAT NOT NULL, 
