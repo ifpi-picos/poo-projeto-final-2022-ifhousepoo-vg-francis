@@ -3,9 +3,10 @@ CREATE TABLE usuario(
  nome VARCHAR(40) NOT NULL,
  email VARCHAR(60) NOT NULL,
  data_nascimento DATE NOT NULL
+ id_endereco INT foreign key;
 );
 CREATE TABLE Imovel (
- valor_aluguel FLOAT NOT NULL, 
+ valorAluguel FLOAT NOT NULL, 
  descricao VARCHAR(100) NOT NULL,
  id_imovel INT PRIMARY KEY NOT NULL
 );

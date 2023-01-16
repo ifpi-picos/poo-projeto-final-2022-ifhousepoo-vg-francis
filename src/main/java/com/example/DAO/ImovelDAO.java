@@ -1,0 +1,48 @@
+package com.example.DAO;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.Entidades.Imovel;
+
+public class ImovelDAO {
+    
+    Connection conexao;
+
+    public void ImovelDao(){
+        conexao = ConexaoDAO.getConexcao();
+    }
+    
+    public void salvar(Imovel imovel){
+        try {
+            Statement stm = conexao.createStatement();
+            String sql = "insert into imovel (descricao,valorAluguel,endereco,dataCadastro) values ('"+imovel.getDescricao()+imovel.getValorAluguel()+imovel.getEndereco()+imovel.getDataCadastro()+"')";
+            stm.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
+    }
+
+    public List<Imovel> consultarTodos(){
+        String sql = "select * from imovel";
+        List<Imovel> usuarios = new ArrayList<>();
+        try {
+            Statement stm = conexao.createStatement();
+            ResultSet result = stm.executeQuery(sql);
+            while (result.next()) {
+                Imovel.add(new Imovel(result.getString("descricao"), result.getDouble("valorAluguel"),result.getString("endereco"),result.getDate("dataCadastro")));
+            }
+            return usuarios;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+}
+

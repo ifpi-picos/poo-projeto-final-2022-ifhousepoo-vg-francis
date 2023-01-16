@@ -5,10 +5,10 @@ import java.util.Date;
 public class Imovel {
     private String descricao;
     private double valorAluguel;
-    private Endereco endereco;
+    private String endereco;
     private Date dataCadastro;
 
-    public Imovel(String descricao, double valorAluguel, Endereco endereco, Date dataCadastro) {
+    public Imovel(String descricao, double valorAluguel, String endereco, Date dataCadastro) {
         this.descricao = descricao;
         this.valorAluguel = valorAluguel;
         this.endereco = endereco;
@@ -31,11 +31,11 @@ public class Imovel {
         this.valorAluguel = valorAluguel;
     }
 
-    public Endereco getEndereco() {
+    public String getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
@@ -45,5 +45,8 @@ public class Imovel {
 
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
+    }
+
+    public static void add(Imovel imovel) {
     }
 }
