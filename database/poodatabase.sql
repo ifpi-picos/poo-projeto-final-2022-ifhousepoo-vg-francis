@@ -8,6 +8,8 @@ CREATE TABLE usuario(
 CREATE TABLE Imovel (
  valorAluguel FLOAT NOT NULL, 
  descricao VARCHAR(100) NOT NULL,
+ dataCadastro date not null,
+ endereco VARCHAR(100) NOT NULL,
  id_imovel INT PRIMARY KEY NOT NULL
 );
 
