@@ -2,12 +2,9 @@ package com.example;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,7 +15,7 @@ public class App extends Application {
         Parent root = null;
 
         try {
-            root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/telas/inicio.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -1,14 +1,14 @@
 package com.example.Entidades;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Imovel {
     private String descricao;
     private double valorAluguel;
     private Endereco endereco;
-    private Date dataCadastro;
+    private LocalDate dataCadastro;
 
-    public Imovel(String descricao, double valorAluguel, Endereco endereco, Date dataCadastro) {
+    public Imovel(String descricao, double valorAluguel, Endereco endereco, LocalDate dataCadastro) {
         this.descricao = descricao;
         this.valorAluguel = valorAluguel;
         this.endereco = endereco;
@@ -39,11 +39,11 @@ public class Imovel {
         this.endereco = endereco;
     }
 
-    public Date getDataCadastro() {
+    public LocalDate getDataCadastro() {
         return dataCadastro;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
+    public void setDataCadastro(LocalDate dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 }
