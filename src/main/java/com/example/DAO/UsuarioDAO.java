@@ -1,6 +1,7 @@
 package com.example.DAO;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,9 +13,12 @@ public class UsuarioDAO {
 
     Connection conexcao;
 
+    public Connection getConexcao() {
+        return conexcao;
+    }
 
-    
-    public void salvar(Usuario usuario){
+
+   public void salvar(Usuario usuario){
         try {
             Statement stm = conexcao.createStatement();
             String sql = "insert into usuario (nome,email,data_nascimento) values('"+usuario.getNome()
@@ -37,7 +41,7 @@ public class UsuarioDAO {
                     usuario.add(new Usuario(result.getLong("id_usuario"),
                     result.getString("nome")
                     ,result.getString("email"), null,
-                    result.getDate("data_nascimento").toLocalDate()));
+                    result.getDate("data_nascimento")));
                 }
                 return usuario;
         } catch (Exception e) {
@@ -54,5 +58,20 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+}
+public void Alterarusuario(Long id_usuario) {
+    try {
+        String sql = "UPDATE usuario SET nome = ?,email = ?,endereco = ?,dataNascimento = ?  WHERE id_usuario = ?";
+        
+        PreparedStatement stm = conexcao.prepareStatement(sql);
+        stm.setString(1, Usuario.getNome());
+        stm.setString(2, Usuario.getEmail());
+        stm.setString(3, Usuario.getEndereco());
+        stm.setDate(5, Usuario.getDataNascimento());
+        stm.executeUpdate(sql);
+
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
+    }
 }
 }
