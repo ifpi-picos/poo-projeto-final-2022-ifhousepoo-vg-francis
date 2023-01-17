@@ -1,5 +1,5 @@
 CREATE TABLE usuario(
- id_usuario INT PRIMARY KEY,
+ id_usuario SERIAL INT PRIMARY KEY,
  nome VARCHAR(40) NOT NULL,
  email VARCHAR(60) NOT NULL,
  data_nascimento DATE NOT NULL,

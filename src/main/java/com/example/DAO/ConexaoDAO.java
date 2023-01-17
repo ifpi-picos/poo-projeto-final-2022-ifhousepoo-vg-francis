@@ -8,6 +8,9 @@ import io.github.cdimascio.dotenv.Dotenv;
 
 public class ConexaoDAO {
 
+    /**
+     * @return
+     */
     public static Connection getConexcao() {
         Dotenv dotenv = Dotenv.load();
         String DATABASE_URL = dotenv.get("DATABASE_URL");

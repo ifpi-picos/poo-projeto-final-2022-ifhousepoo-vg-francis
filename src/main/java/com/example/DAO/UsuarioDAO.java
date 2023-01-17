@@ -6,16 +6,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.Entidades.Endereco;
 import com.example.Entidades.Usuario;
 
 public class UsuarioDAO {
 
     Connection conexcao;
 
-    public UsuarioDAO(){
-        conexcao = ConexaoDAO.getConexcao();
-    }
+
+    
     public void salvar(Usuario usuario){
         try {
             Statement stm = conexcao.createStatement();
@@ -36,8 +34,10 @@ public class UsuarioDAO {
             Statement stm =  conexcao.createStatement();
                 ResultSet result = stm.executeQuery(sql);
                 while(result.next()){
-                    Endereco endereco;
-                    usuario.add(new Usuario(result.getLong("id_usuario"),result.getString("nome"),result.getString("email"), null,result.getDate("data_nascimento").toLocalDate()));
+                    usuario.add(new Usuario(result.getLong("id_usuario"),
+                    result.getString("nome")
+                    ,result.getString("email"), null,
+                    result.getDate("data_nascimento").toLocalDate()));
                 }
                 return usuario;
         } catch (Exception e) {
