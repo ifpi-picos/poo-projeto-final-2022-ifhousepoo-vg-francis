@@ -2,6 +2,7 @@ package com.example.DAO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,5 +42,15 @@ public class EnderecoDAO {
             return null;
         }
     }
+    public void deleteEndereco(int numero) {
+        try {
+            String sql = "DELETE FROM endereco WHERE numero = ?";
+            Statement stm = conexcao.prepareStatement(sql);
+            stm.executeQuery(sql);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+}
 }
 

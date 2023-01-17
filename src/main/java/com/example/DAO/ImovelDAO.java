@@ -49,5 +49,15 @@ public class ImovelDAO {
             return null;
         }
     }
+    public void deleteImovel() {
+        try {
+            String sql = "DELETE FROM imovel WHERE valorAluguel = ?";
+            Statement stm = conexao.prepareStatement(sql);
+            stm.executeQuery(sql);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+}
 }
 
