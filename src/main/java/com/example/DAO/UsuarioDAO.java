@@ -12,6 +12,9 @@ public class UsuarioDAO {
 
     Connection conexcao;
 
+    public UsuarioDAO(){
+        conexcao = ConexaoDAO.getConexcao();
+    }
 
     
     public void salvar(Usuario usuario){
