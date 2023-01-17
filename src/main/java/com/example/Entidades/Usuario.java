@@ -1,12 +1,13 @@
 package com.example.Entidades;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Usuario {
     private Long id_usuario;
     private String nome;
     private String email;
-    private Date dataNascimento;
+    private Endereco endereco;
+    private LocalDate dataNascimento;
 
     /**
      * @param id_usuario
@@ -15,10 +16,11 @@ public class Usuario {
      * @param endereco
      * @param dataNascimento
      */
-    public Usuario(Long id_usuario, String nome, String email, Date dataNascimento) {
+    public Usuario(Long id_usuario, String nome, String email, Endereco endereco, LocalDate dataNascimento) {
         this.id_usuario = id_usuario;
         this.nome = nome;
         this.email = email;
+        this.endereco = endereco;
         this.dataNascimento = dataNascimento;
     }
     
@@ -40,10 +42,18 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Date getDataNascimento() {
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

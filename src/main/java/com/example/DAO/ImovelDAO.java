@@ -41,7 +41,7 @@ public class ImovelDAO {
             Statement stm = conexao.createStatement();
             ResultSet result = stm.executeQuery(sql);
             while (result.next()) {
-                Imovel.add(new Imovel(result.getString("descricao"), result.getDouble("valorAluguel"),result.getDate("dataCadastro")));
+                Imovel.add(new Imovel(result.getString("descricao"), result.getDouble("valorAluguel"), null, result.getDate("dataCadastro").toLocalDate()));
             }
             return imovel;
         } catch (SQLException e) {

@@ -37,7 +37,7 @@ public class UsuarioDAO {
                 ResultSet result = stm.executeQuery(sql);
                 while(result.next()){
                     Endereco endereco;
-                    usuario.add(new Usuario(result.getLong("id_usuario"),result.getString("nome"),result.getString("email"),result.getDate("data_nascimento")));
+                    usuario.add(new Usuario(result.getLong("id_usuario"),result.getString("nome"),result.getString("email"), null,result.getDate("data_nascimento").toLocalDate()));
                 }
                 return usuario;
         } catch (Exception e) {
