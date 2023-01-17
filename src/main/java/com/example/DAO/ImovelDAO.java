@@ -20,7 +20,9 @@ public class ImovelDAO {
     public void salvar(Imovel imovel){
         try {
             Statement stm = conexao.createStatement();
-            String sql = "insert into imovel (descricao,valorAluguel,endereco,dataCadastro) values ('"+imovel.getDescricao()+imovel.getValorAluguel()+imovel.getEndereco()+imovel.getDataCadastro()+"')";
+            String sql = "insert into imovel (descricao,valorAluguel,dataCadastro) values ('"+imovel.getDescricao()
+            +imovel.getValorAluguel()
+            +imovel.getDataCadastro()+"')";
             stm.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -39,7 +41,7 @@ public class ImovelDAO {
             Statement stm = conexao.createStatement();
             ResultSet result = stm.executeQuery(sql);
             while (result.next()) {
-                Imovel.add(new Imovel(result.getString("descricao"), result.getDouble("valorAluguel"),result.getString("endereco"),result.getDate("dataCadastro")));
+                Imovel.add(new Imovel(result.getString("descricao"), result.getDouble("valorAluguel"),result.getDate("dataCadastro")));
             }
             return imovel;
         } catch (SQLException e) {
