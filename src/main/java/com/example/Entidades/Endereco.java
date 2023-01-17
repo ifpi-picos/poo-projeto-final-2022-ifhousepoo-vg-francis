@@ -7,6 +7,7 @@ public class Endereco {
     int numero;
     String cidade;
     String uf;
+    
 
     
     public Endereco(String rua, String bairro, int numero, String cidade, String uf) {
