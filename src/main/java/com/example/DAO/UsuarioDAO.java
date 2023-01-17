@@ -20,10 +20,10 @@ public class UsuarioDAO {
     public void salvar(Usuario usuario){
         try {
             Statement stm = conexcao.createStatement();
-            String sql = "insert into usuario (nome,email,data_nascimento) values('"+usuario.getNome()
-            +usuario.getEmail()
-            +usuario.getDataNascimento()
-            +"')";
+            String sql = "insert into usuario (nome,email,data_nascimento) values('"+usuario.getNome() + "',"
+            + "'" + usuario.getEmail() + "',"
+            + "'" + usuario.getDataNascimento() + "'"
+            +")";
             stm.executeUpdate(sql);
         } catch (Exception e) {
             // TODO: handle exception
