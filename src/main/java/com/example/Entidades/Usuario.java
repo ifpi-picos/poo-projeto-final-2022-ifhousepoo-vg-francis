@@ -1,35 +1,27 @@
 package com.example.Entidades;
 
-import java.sql.Date;
+
+import java.time.LocalDate;
 
 public class Usuario {
-    private Long id_usuario;
     private static String nome;
     private static String email;
-    private static String endereco;
-    private static Date dataNascimento;
+    private static Endereco endereco;
+    private static LocalDate dataNascimento;
 
     /**
-     * @param id_usuario
      * @param nome
      * @param email
      * @param endereco
      * @param dataNascimento
      */
-    public Usuario(Long id_usuario, String nome, String email, String endereco, Date dataNascimento) {
-        this.id_usuario = id_usuario;
+    public Usuario(String nome, String email, Endereco endereco, LocalDate dataNascimento) {
         this.nome = nome;
         this.email = email;
         this.endereco = endereco;
         this.dataNascimento = dataNascimento;
     }
     
-    public long getId_usuario() {
-        return id_usuario;
-    }
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
-    }
     public static String getNome() {
         return nome;
     }
@@ -42,18 +34,18 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-    public static String getEndereco() {
+    public static Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
-    public static Date getDataNascimento() {
+    public static LocalDate getDataNascimento() {
         return dataNascimento;
     }
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

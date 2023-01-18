@@ -9,6 +9,7 @@ public class Imovel {
 
     public Imovel(String descricao, double valorAluguel, Endereco endereco, LocalDate dataCadastro) {
         this.descricao = descricao;
+        this.endereco = endereco;
         this.valorAluguel = valorAluguel;
         this.dataCadastro = dataCadastro;
     }
@@ -19,6 +20,14 @@ public class Imovel {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public double getValorAluguel() {
