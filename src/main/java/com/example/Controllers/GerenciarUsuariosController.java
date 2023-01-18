@@ -13,8 +13,8 @@ public class GerenciarUsuariosController extends ControllerFactory {
         mudarTela("adicionarUsuario", e);
     }
 
-    public void removerUsuario(ActionEvent e) {
-        System.out.println("Remover usuario...");
+    public void removerUsuario(ActionEvent e) throws IOException {
+        mudarTela("removerUsuario", e);
     }
 
     public void voltar(ActionEvent e) throws IOException {

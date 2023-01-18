@@ -1,5 +1,6 @@
 package com.example.Controllers;
 
+import com.example.Dados.UsuarioDados;
 import com.example.Entidades.Endereco;
 import com.example.Entidades.Usuario;
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class AdicionarUsuarioController extends ControllerFactory {
     @FXML
@@ -38,18 +40,8 @@ public class AdicionarUsuarioController extends ControllerFactory {
         String cidade = cidadeTextField.getText();
         String uf = ufTextField.getText();
         Endereco endereco = new Endereco(rua, bairro, numero, cidade, uf);
-        Usuario usuario = new Usuario(null, nome, email, endereco, dataNascimento);
-
-        System.out.println(nome);
-        System.out.println(email);
-        System.out.println(dataNascimento);
-        System.out.println(rua);
-        System.out.println(bairro);
-        System.out.println(numero);
-        System.out.println(cidade);
-        System.out.println(uf);
-
-        // TODO: adicionar usuario ao banco de dados
+        Usuario usuario = new Usuario(nome, email, endereco, dataNascimento);
+        UsuarioDados.adicionaUsuario(usuario);
 
         mudarTela("gerenciarUsuarios", e);
     }
