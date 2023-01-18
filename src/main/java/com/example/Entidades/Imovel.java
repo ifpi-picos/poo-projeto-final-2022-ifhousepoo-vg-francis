@@ -7,11 +7,25 @@ public class Imovel {
     private Endereco endereco;
     private LocalDate dataCadastro;
 
+    private double id;
+
+    private static double idAtual = 1;
+
     public Imovel(String descricao, double valorAluguel, Endereco endereco, LocalDate dataCadastro) {
+        this.id = idAtual;
+        idAtual++;
         this.descricao = descricao;
         this.endereco = endereco;
         this.valorAluguel = valorAluguel;
         this.dataCadastro = dataCadastro;
+    }
+
+    public double getId() {
+        return id;
+    }
+
+    public static double getIdAtual() {
+        return idAtual;
     }
 
     public String getDescricao() {
