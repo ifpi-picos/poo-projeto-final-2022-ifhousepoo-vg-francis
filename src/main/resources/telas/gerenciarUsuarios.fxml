@@ -6,17 +6,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.GerenciarUsuariosController">
    <children>
-      <Button layoutX="200.0" layoutY="123.0" mnemonicParsing="false" onAction="#verUsuarios" prefHeight="50.0" prefWidth="239.0" text="Ver usuários">
+      <Button layoutX="200.0" layoutY="130.0" mnemonicParsing="false" onAction="#verUsuarios" prefHeight="50.0" prefWidth="239.0" text="Ver usuários">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button layoutX="200.0" layoutY="215.0" mnemonicParsing="false" onAction="#adicionarUsuario" prefHeight="50.0" prefWidth="239.0" text="Adicionar usuário">
+      <Button layoutX="200.0" layoutY="274.0" mnemonicParsing="false" onAction="#adicionarUsuario" prefHeight="50.0" prefWidth="239.0" text="Adicionar usuário">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button layoutX="200.0" layoutY="312.0" mnemonicParsing="false" onAction="#removerUsuario" prefHeight="50.0" prefWidth="239.0" text="Remover usuário">
+      <Button layoutX="200.0" layoutY="344.0" mnemonicParsing="false" onAction="#removerUsuario" prefHeight="50.0" prefWidth="239.0" text="Remover usuário">
          <font>
             <Font size="21.0" />
          </font>
@@ -24,6 +24,11 @@
       <Button layoutX="14.0" layoutY="431.0" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="93.0" text="&lt;- Voltar">
          <font>
             <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="200.0" layoutY="203.0" mnemonicParsing="false" onAction="#alterarUsuario" prefHeight="50.0" prefWidth="239.0" text="Alterar usuário">
+         <font>
+            <Font size="21.0" />
          </font>
       </Button>
    </children>

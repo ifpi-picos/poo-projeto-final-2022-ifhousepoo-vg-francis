@@ -9,6 +9,10 @@ public class GerenciarUsuariosController extends ControllerFactory {
         mudarTela("verUsuarios", e);
     }
 
+    public void alterarUsuario(ActionEvent e) throws IOException {
+        mudarTela("alterarUsuario", e);
+    }
+
     public void adicionarUsuario(ActionEvent e) throws IOException {
         mudarTela("adicionarUsuario", e);
     }
