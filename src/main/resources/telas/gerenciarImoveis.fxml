@@ -6,17 +6,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.GerenciarImoveisController">
    <children>
-      <Button layoutX="200.0" layoutY="123.0" mnemonicParsing="false" onAction="#verImoveis" prefHeight="50.0" prefWidth="239.0" text="Ver imóveis">
+      <Button layoutX="200.0" layoutY="114.0" mnemonicParsing="false" onAction="#verImoveis" prefHeight="50.0" prefWidth="239.0" text="Ver imóveis">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button layoutX="200.0" layoutY="215.0" mnemonicParsing="false" onAction="#adicionarImovel" prefHeight="50.0" prefWidth="239.0" text="Adicionar imóvel">
+      <Button layoutX="200.0" layoutY="261.0" mnemonicParsing="false" onAction="#adicionarImovel" prefHeight="50.0" prefWidth="239.0" text="Adicionar imóvel">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button layoutX="200.0" layoutY="312.0" mnemonicParsing="false" onAction="#removerImovel" prefHeight="50.0" prefWidth="239.0" text="Remover imóvel">
+      <Button layoutX="200.0" layoutY="333.0" mnemonicParsing="false" onAction="#removerImovel" prefHeight="50.0" prefWidth="239.0" text="Remover imóvel">
          <font>
             <Font size="21.0" />
          </font>
@@ -24,6 +24,11 @@
       <Button layoutX="14.0" layoutY="432.0" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="93.0" text="&lt;- Voltar">
          <font>
             <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="200.0" layoutY="189.0" mnemonicParsing="false" onAction="#alterarImovel" prefHeight="50.0" prefWidth="239.0" text="Alterar imóvel">
+         <font>
+            <Font size="21.0" />
          </font>
       </Button>
    </children>

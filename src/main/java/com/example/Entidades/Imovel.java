@@ -7,9 +7,9 @@ public class Imovel {
     private Endereco endereco;
     private LocalDate dataCadastro;
 
-    private double id;
+    private int id;
 
-    private static double idAtual = 1;
+    private static int idAtual = 1;
 
     public Imovel(String descricao, double valorAluguel, Endereco endereco, LocalDate dataCadastro) {
         this.id = idAtual;

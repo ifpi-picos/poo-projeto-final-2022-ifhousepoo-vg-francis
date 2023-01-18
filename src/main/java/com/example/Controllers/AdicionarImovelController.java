@@ -1,5 +1,6 @@
 package com.example.Controllers;
 
+import com.example.Dados.ImovelDados;
 import com.example.Entidades.Endereco;
 import com.example.Entidades.Imovel;
 import javafx.event.ActionEvent;
@@ -36,15 +37,10 @@ public class AdicionarImovelController extends ControllerFactory {
         Endereco endereco = new Endereco(rua, bairro, numero, cidade, uf);
         Imovel imovel = new Imovel(descricao, valorAluguel, endereco, LocalDate.now());
 
-        System.out.println(descricao);
-        System.out.println(valorAluguel);
-        System.out.println(rua);
-        System.out.println(bairro);
-        System.out.println(numero);
-        System.out.println(cidade);
-        System.out.println(uf);
-
-        // TODO: adicionar usuario ao banco de dados
+        ImovelDados.adicionaImovel(imovel);
+        for (Imovel im : ImovelDados.getImoveis()) {
+            System.out.println(im.getDescricao());
+        }
 
         mudarTela("gerenciarImoveis", e);
     }
