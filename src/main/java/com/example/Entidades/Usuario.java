@@ -4,10 +4,10 @@ package com.example.Entidades;
 import java.time.LocalDate;
 
 public class Usuario {
-    private static String nome;
-    private static String email;
-    private static Endereco endereco;
-    private static LocalDate dataNascimento;
+    private String nome;
+    private String email;
+    private Endereco endereco;
+    private LocalDate dataNascimento;
 
     /**
      * @param nome
@@ -22,19 +22,19 @@ public class Usuario {
         this.dataNascimento = dataNascimento;
     }
     
-    public static String getNome() {
+    public String getNome() {
         return nome;
     }
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public static String getEmail() {
+    public String getEmail() {
         return email;
     }
     public void setEmail(String email) {
         this.email = email;
     }
-    public static Endereco getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
@@ -42,7 +42,7 @@ public class Usuario {
         this.endereco = endereco;
     }
 
-    public static LocalDate getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
     public void setDataNascimento(LocalDate dataNascimento) {
