@@ -5,8 +5,8 @@ import javafx.event.ActionEvent;
 import java.io.IOException;
 
 public class GerenciarUsuariosController extends ControllerFactory {
-    public void verUsuarios(ActionEvent e) {
-        System.out.println("Ver usuarios...");
+    public void verUsuarios(ActionEvent e) throws IOException {
+        mudarTela("verUsuarios", e);
     }
 
     public void adicionarUsuario(ActionEvent e) throws IOException {

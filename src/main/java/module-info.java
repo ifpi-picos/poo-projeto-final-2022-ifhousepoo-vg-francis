@@ -6,4 +6,5 @@ module IFHouse {
     opens com.example to javafx.fxml;
     exports com.example.Controllers to javafx.fxml, javafx.graphics;
     opens com.example.Controllers to javafx.fxml;
+    opens com.example.Entidades to javafx.base;
 }

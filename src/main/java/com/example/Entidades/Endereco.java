@@ -49,6 +49,8 @@ public class Endereco {
         this.uf = uf;
     }
 
-    
+    public String toString() {
+        return String.join(", ", rua, bairro, Integer.toString(numero), cidade, uf);
+    }
 }
 
