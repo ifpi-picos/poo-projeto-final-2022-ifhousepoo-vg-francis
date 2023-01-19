@@ -20,7 +20,7 @@ public class Imovel {
         this.dataCadastro = dataCadastro;
     }
 
-    public double getId() {
+    public int getId() {
         return id;
     }
 
