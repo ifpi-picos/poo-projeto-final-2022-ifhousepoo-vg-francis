@@ -1,5 +1,8 @@
 package com.example.Entidades;
 
+import com.example.Dados.AluguelDados;
+import com.example.Exceptions.ImovelJaAlugadoException;
+
 import java.time.LocalDate;
 
 public class Aluguel {
@@ -12,12 +15,12 @@ public class Aluguel {
 
     private static int idAtual = 1;
 
-    public Aluguel(LocalDate dataInicio, LocalDate dataFim, Imovel imovel, Usuario usuario) {
+    public Aluguel(LocalDate dataInicio, LocalDate dataFim, Imovel imovel, Usuario usuario) throws ImovelJaAlugadoException {
         this.id = idAtual;
         idAtual++;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
-        this.imovel = imovel;
+        setImovel(imovel);
         this.usuario = usuario;
     }
 
@@ -41,7 +44,12 @@ public class Aluguel {
         return imovel;
     }
 
-    public void setImovel(Imovel imovel) {
+    public void setImovel(Imovel imovel) throws ImovelJaAlugadoException {
+        for (Aluguel aluguel : AluguelDados.getAlugueis()) {
+            if (aluguel.getImovel().getId() == imovel.getId()) {
+                throw new ImovelJaAlugadoException();
+            }
+        }
         this.imovel = imovel;
     }
 

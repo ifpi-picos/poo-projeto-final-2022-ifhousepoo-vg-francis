@@ -7,8 +7,10 @@ import com.example.Entidades.Aluguel;
 import com.example.Entidades.Endereco;
 import com.example.Entidades.Imovel;
 import com.example.Entidades.Usuario;
+import com.example.Exceptions.ImovelJaAlugadoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
@@ -32,7 +34,18 @@ public class AdicionarAluguelController extends ControllerFactory {
         String email = usuarioEmailTextField.getText();
         Usuario usuario = UsuarioDados.getUsuarioByEmail(email);
         Imovel imovel = ImovelDados.getImovelById(imovelId);
-        Aluguel aluguel = new Aluguel(dataInicio, dataFim, imovel, usuario);
+        Aluguel aluguel = null;
+
+        try {
+            aluguel = new Aluguel(dataInicio, dataFim, imovel, usuario);
+        } catch (ImovelJaAlugadoException err) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setHeaderText("ERRO");
+            errorAlert.setContentText(err.getMessage());
+            errorAlert.showAndWait();
+            return;
+        }
+
         AluguelDados.adicionaAluguel(aluguel);
 
         mudarTela("gerenciarAlugueisImovel", e);

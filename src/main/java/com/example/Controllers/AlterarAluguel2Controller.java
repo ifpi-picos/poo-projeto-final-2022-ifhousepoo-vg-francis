@@ -4,12 +4,16 @@ import com.example.Dados.AluguelDados;
 import com.example.Dados.ImovelDados;
 import com.example.Dados.UsuarioDados;
 import com.example.Entidades.Aluguel;
+import com.example.Entidades.Imovel;
+import com.example.Entidades.Usuario;
+import com.example.Exceptions.ImovelJaAlugadoException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -34,10 +38,22 @@ public class AlterarAluguel2Controller extends ControllerFactory {
         LocalDate dataFim = dataFimDatePicker.getValue();
         int imovelId = Integer.parseInt(imovelIdTextField.getText());
         String usuarioEmail = usuarioEmailTextField.getText();
+        Imovel imovel = ImovelDados.getImovelById(imovelId);
+        Usuario usuario = UsuarioDados.getUsuarioByEmail(usuarioEmail);
+
+        try {
+            this.aluguel.setImovel(imovel);
+        } catch (ImovelJaAlugadoException err) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setHeaderText("ERRO");
+            errorAlert.setContentText(err.getMessage());
+            errorAlert.showAndWait();
+            return;
+        }
+
         this.aluguel.setDataInicio(dataInicio);
         this.aluguel.setDataFim(dataFim);
-        this.aluguel.setImovel(ImovelDados.getImovelById(imovelId));
-        this.aluguel.setUsuario(UsuarioDados.getUsuarioByEmail(usuarioEmail));
+        this.aluguel.setUsuario(usuario);
         mudarTela("gerenciarAlugueisImovel", e);
     }
 
