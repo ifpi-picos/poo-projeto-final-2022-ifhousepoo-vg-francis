@@ -7,12 +7,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.InicioController">
    <children>
-      <Button layoutX="200.0" layoutY="215.0" mnemonicParsing="false" onAction="#gerenciarUsuarios" prefHeight="50.0" prefWidth="239.0" text="Gerenciar usuários">
+      <Button layoutX="150.0" layoutY="189.0" mnemonicParsing="false" onAction="#gerenciarUsuarios" prefHeight="51.0" prefWidth="340.0" text="Gerenciar usuários">
          <font>
             <Font size="21.0" />
          </font>
       </Button>
-      <Button layoutX="200.0" layoutY="299.0" mnemonicParsing="false" onAction="#gerenciarImoveis" prefHeight="50.0" prefWidth="239.0" text="Gerenciar imóveis">
+      <Button layoutX="150.0" layoutY="253.0" mnemonicParsing="false" onAction="#gerenciarImoveis" prefHeight="52.0" prefWidth="340.0" text="Gerenciar imóveis">
          <font>
             <Font size="21.0" />
          </font>
@@ -22,5 +22,10 @@
             <Font size="56.0" />
          </font>
       </Text>
+      <Button layoutX="150.0" layoutY="320.0" mnemonicParsing="false" onAction="#gerenciarAlugueisImovel" prefHeight="51.0" prefWidth="339.0" text="Gerenciar alugueis de imovel">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

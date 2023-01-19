@@ -1,5 +1,12 @@
 package com.example;
 
+import com.example.Dados.AluguelDados;
+import com.example.Dados.ImovelDados;
+import com.example.Dados.UsuarioDados;
+import com.example.Entidades.Aluguel;
+import com.example.Entidades.Endereco;
+import com.example.Entidades.Imovel;
+import com.example.Entidades.Usuario;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class App extends Application {
     @Override

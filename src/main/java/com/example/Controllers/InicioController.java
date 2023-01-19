@@ -17,4 +17,8 @@ public class InicioController extends ControllerFactory {
     public void gerenciarImoveis(ActionEvent e) throws IOException {
         mudarTela("gerenciarImoveis", e);
     }
+
+    public void gerenciarAlugueisImovel(ActionEvent e) throws IOException {
+        mudarTela("gerenciarAlugueisImovel", e);
+    }
 }

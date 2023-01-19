@@ -8,7 +8,13 @@ public class Aluguel {
     private Imovel imovel;
     private Usuario usuario;
 
+    private int id;
+
+    private static int idAtual = 1;
+
     public Aluguel(LocalDate dataInicio, LocalDate dataFim, Imovel imovel, Usuario usuario) {
+        this.id = idAtual;
+        idAtual++;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
         this.imovel = imovel;
@@ -45,5 +51,9 @@ public class Aluguel {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public int getId() {
+        return id;
     }
 }
