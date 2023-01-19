@@ -38,9 +38,6 @@ public class AdicionarImovelController extends ControllerFactory {
         Imovel imovel = new Imovel(descricao, valorAluguel, endereco, LocalDate.now());
 
         ImovelDados.adicionaImovel(imovel);
-        for (Imovel im : ImovelDados.getImoveis()) {
-            System.out.println(im.getDescricao());
-        }
 
         mudarTela("gerenciarImoveis", e);
     }
